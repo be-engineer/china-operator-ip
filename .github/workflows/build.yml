@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '20 14 * * *'
-  env:
+env:
     TZ: Asia/Shanghai
     
 jobs:
