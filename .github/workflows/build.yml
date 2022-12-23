@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
   schedule:
-    - cron: '50 6 * * *'
+    - cron: '50 0 * * *'
 env:
     TZ: Asia/Shanghai
     
@@ -37,10 +37,12 @@ jobs:
       - run: ./guard.sh
       - name: Checkout ip-lists branch
         uses: actions/checkout@v3
-        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        #if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         with:
           ref: ip-lists
           path: ip-lists
       - run: ./upload.sh
-        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        #if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
 
