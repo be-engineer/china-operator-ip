@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
   schedule:
-    - cron: '20 14 * * *'
+    - cron: '25 14 * * *'
 env:
     TZ: Asia/Shanghai
     
